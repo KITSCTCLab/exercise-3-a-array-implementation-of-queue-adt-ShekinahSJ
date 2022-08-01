@@ -118,7 +118,7 @@ class Solution:
 
 
 # read the string text
-text = input()
+text = input("Enter a string")
 
 # find the length of text
 length_of_text = len(text)
@@ -129,6 +129,8 @@ solution = Solution(length_of_text)
 # push/enqueue all the characters of string text to stack
 for index in range(length_of_text):
     # Write code here
+    solution.push_character(index)
+    solution.enqueue_character(index)
 
 is_palindrome = True
 '''
@@ -138,6 +140,12 @@ compare both characters
 If the comparison fails, set is_palindrome as False.
 '''
 # Write the necessary logic
+popchar=solution.pop_charcter()
+deqchar=solution.dequeue_character()
+if popchar!=deqchar:
+    is_palindrome=False
+else:
+    is_palindrome=True
 
 
 # finally print whether string text is palindrome or not.
