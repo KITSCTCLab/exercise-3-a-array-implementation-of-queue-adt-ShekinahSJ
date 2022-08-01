@@ -54,7 +54,7 @@ class Solution:
           True if it is full, else returns False.
         """
         # Write your code here
-        if self.top==self.size:
+        if self.top==self.size-1:
             return True
         else:
             return False
