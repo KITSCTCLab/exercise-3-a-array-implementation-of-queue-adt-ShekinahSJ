@@ -29,6 +29,10 @@ class Solution:
           True if it is empty, else returns False.
         """
         # Write your code here
+        if self.top==-1:
+            return True
+        else:
+            return False
 
     def is_queue_empty(self):
         """
@@ -37,6 +41,11 @@ class Solution:
           True if it is empty, else returns False.
         """
         # Write your code here
+        if self.rear==-1 and self.front==-1 or self.front==self.rear+1:
+            return True
+        else:
+            return False
+            
 
     def is_stack_full(self):
         """
@@ -45,6 +54,10 @@ class Solution:
           True if it is full, else returns False.
         """
         # Write your code here
+        if self.top==self.size:
+            return True
+        else:
+            return False
 
     def is_queue_full(self):
         """
@@ -53,6 +66,10 @@ class Solution:
           True if it is full, else returns False.
         """
         # Write your code here
+        if self.rear==self.size and self.front==self.size:
+            return True
+        else:
+            return False
 
     def push_character(self, character):
         """
@@ -61,6 +78,10 @@ class Solution:
             character: A character that will be pushed to the stack.
         """
         # Write your code here
+        if not is_stack_full():
+            self.top=self.top+1
+            self.stack[self.top]=character
+        
 
     def enqueue_character(self, character):
         """
@@ -69,6 +90,9 @@ class Solution:
             character: A character that will be enqueued to queue.
         """
         # Write your code here
+        if not is_queue_full():
+            self.rear=self.rear+1
+            self.queue[self.rear]=character
 
     def pop_character(self):
         """
@@ -77,6 +101,9 @@ class Solution:
           The data that is popped out if the stack is not empty.
         """
         # Write your code here
+        if not is_stack_empty():
+            del self.stack[self.top]
+            self.top=self.top-1
 
     def dequeue_character(self):
         """
@@ -85,6 +112,9 @@ class Solution:
           The data that is dequeued if the queue is not empty.
         """
         # Write your code here
+        if not is_queue_empty():
+            del self.stack[self.front]
+            self.front=self.front+1
 
 
 # read the string text
